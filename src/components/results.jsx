@@ -1,20 +1,9 @@
-/**
- * Component that displays the quiz results and calculates the user's score.
- *
- * @component
- * @param {Object} props
- * @param {string[]} props.userAnswers
- * @param {{question: string, options: string[], answer: string}[]} props.quizData
- * @param {() => void} props.restartQuiz
- * @returns {JSX.Element}
- */
+import { useContext } from "react";
+import { QuizContext } from "../context/quiz-context";
 
-export const Results = ({ userAnswers, quizData, restartQuiz }) => {
-  /**
-   * Calculates the user's final score by comparing their answers to the correct ones.
-   *
-   * @returns {number} The final score.
-   */
+export const Results = () => {
+  const { userAnswers, quizData, restartQuiz } = useContext(QuizContext);
+
   const getScore = () => {
     let finalScore = 0;
     userAnswers.forEach((answer, index) => {

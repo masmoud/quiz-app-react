@@ -1,13 +1,16 @@
 import { Quiz } from "./components/quiz";
 import "./index.css";
+import { QuizProvider } from "./provider/quiz-provider";
 
 function App() {
   return (
-    <div className="app-container">
-      <h1> Quiz App </h1>
+    <QuizProvider>
+      <div className="app-container">
+        <h1> Quiz App </h1>
 
-      <Quiz />
-    </div>
+        <Quiz />
+      </div>
+    </QuizProvider>
   );
 }
 

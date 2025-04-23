@@ -1,12 +1,74 @@
-# React + Vite
+Sure! Here's the English version of your `README.md`:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# React Quiz App
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A simple quiz application built with **React**, using the **Context API** to manage global state (questions, user answers, navigation, and restart functionality).
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Displays a series of multiple-choice questions
+- Saves the user's selected answers
+- Calculates and shows the final score at the end
+- Allows restarting the quiz at any time
+- Based on static quiz data
+
+---
+
+## Tech Stack
+
+- **React**
+- **Context API** for global state management
+- **JSX**
+- **CSS**
+
+---
+
+## Project Structure
+
+```
+src/
+│
+├── assets/
+│   └── quizData.js         # Static quiz data (questions and answers)
+│
+├── components/
+│   ├── questions.jsx       # Renders each question and its options
+│   ├── quiz.jsx            # Renders the results or questions
+│   └── results.jsx         # Shows final score and restart button
+│
+├── context/
+│   └── quiz-context.jsx    # Creates the context via React Context
+│
+├── provider/
+│   └── quiz-provider.jsx   # Provides the actual data and functions through the context
+│
+├── App.jsx                 # Main application entry point
+├── index.css               # Main css file
+└── main.jsx                # ReactDOM initialization
+```
+
+---
+
+## Getting Started
+
+Make sure you have Node.js installed, then run:
+
+```bash
+npm install
+npm run dev
+```
+
+Your app should now be running on `http://localhost:5173` (or whatever port Vite assigns).
+
+---
+
+## Future Improvements (Optional)
+
+- Add a timer or countdown per question
+- Store user scores in local storage
+- Fetch quiz data from an API instead of static file
+- Add categories or difficulty levels
+
+---
